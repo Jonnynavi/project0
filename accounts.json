@@ -1,47 +1,20 @@
 {
    "accounts": [
       {
+         "account_number": 1,
+         "personal_info": {
+            "first_name": "jojo",
+            "last_name": "hal",
+            "age": "72"
+         },
+         "balance": 20
+      },
+      {
          "account_number": 2,
          "personal_info": {
-            "first_name": "ttt",
-            "last_name": "jona",
-            "age": "45"
-         },
-         "balance": 400
-      },
-      {
-         "account_number": 3,
-         "personal_info": {
-            "first_name": "Jonathan",
-            "last_name": "toto",
-            "age": "48"
-         },
-         "balance": 200
-      },
-      {
-         "account_number": 5,
-         "personal_info": {
-            "first_name": "stella",
-            "last_name": "vivi",
-            "age": "45"
-         },
-         "balance": 0
-      },
-      {
-         "account_number": 6,
-         "personal_info": {
-            "first_name": "yo",
-            "last_name": "bo",
-            "age": "33"
-         },
-         "balance": 0
-      },
-      {
-         "account_number": 7,
-         "personal_info": {
-            "first_name": "boji",
-            "last_name": "torres",
-            "age": "2"
+            "first_name": "gil",
+            "last_name": "bert",
+            "age": "24"
          },
          "balance": 0
       }

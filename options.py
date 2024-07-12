@@ -13,7 +13,7 @@ def create_a_account():
     account_number = json_logic.json_generate_id()
     new_account = Account(account_number,person)
     json_logic.json_create_an_account(new_account)
-    print(f"Congrats on opening your new account {first_name} {last_name}. Your account number is {account_number}.")
+    print(f"Congrats on opening your new account {first_name.title()} {last_name.title()}. Your account number is {account_number}.")
 
 def deposit():
     id = check_if_id_exist()
@@ -31,6 +31,11 @@ def withdraw():
         return
     
     withdraw_amount = int(input("Please enter the amount you want to withdraw. \n"))
+    account_info = json_logic.json_get_account_info(id)
+    if account_info['balance'] < withdraw_amount:
+        print(f"You currently only have ${account_info['balance']}. Please try again")
+        withdraw()
+        return      
     json_logic.json_update_balance(id,withdraw_amount * -1)
 
 def get_balance():
@@ -47,7 +52,7 @@ def delete_account():
     if not id:
         print("Account does not exist")
         return
-    
+    print("We are sorry to see you go. We hope to see you back.")
     json_logic.json_delete_account(id)
 
 def modify_account():

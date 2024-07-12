@@ -42,19 +42,20 @@ def json_update_account(id, option, updated_data):
     data = json_get_accounts()
     with open('accounts.json', 'w') as file:
         for account in data['accounts']:
-            print(id)
             if account['account_number'] == id:
-                print("i did too")
                 personal_info = account['personal_info']
-                print(option)
                 match option:
                     case "First Name":
                         personal_info['first_name'] = updated_data
+                        print(f"Your first name is now {personal_info['first_name'].title()}.")
                     case "Last Name":
                         personal_info['last_name'] = updated_data
+                        print(f"Your last name is now {personal_info['last_name'].title()}.")
+
                     case "Age":
                         personal_info['age'] = updated_data
-        print(data)
+                        print(f"Your age is now {personal_info['age'].title()}.")
+
         json.dump(data, file ,indent=3)
         
 def json_generate_id():
@@ -64,7 +65,10 @@ def json_generate_id():
         data = json.load(file)
         accounts = data['accounts']
         ids = [x['account_number'] for x in accounts if 'account_number' in x]
-        id = max(ids) + 1
+        if not ids:
+            id = 1
+        else:
+            id = max(ids) + 1
 
         return id
     
